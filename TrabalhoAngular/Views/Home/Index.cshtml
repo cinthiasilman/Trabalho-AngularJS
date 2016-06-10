@@ -1,0 +1,46 @@
+﻿@model TrabalhoAngular.Models.Inscricoes.Inscricao
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+
+@section JavascriptHeader
+
+{
+
+    <script src="~/Scripts/Cursos/cursos-controller.js"></script>
+
+    <script src="~/Scripts/Alunos/alunos-controller.js"></script>
+
+    <script type="text/javascript">
+
+        app.factory('bootstrappedData', function() {
+
+            return {
+
+                cursos: @Html.Raw(Model.Cursos),
+
+                alunos: @Html.Raw(Model.Alunos),
+
+            };
+
+        });
+
+    </script>
+
+}
+
+
+
+<div class="container">
+
+    <div ng-view></div>
+
+</div>
+
+
+
